@@ -1,0 +1,94 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{plotmarks}
+\title{}
+\author{Sylvain}
+\begin{document}
+\maketitle
+
+\begin{tikzpicture}
+\begin{axis}[
+height=8cm,width=12cm
+,axis x line=bottom,axis y line=left
+,xmin=0.048,xmax=4.152
+,ymin=2.963131041792,ymax=46.097571883008
+,grid=major
+,title={N\degres1 }
+,xlabel={V(mL)}
+,ylabel={P(bar)}
+]
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron10.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron11.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron12.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron13.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron14.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron15.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron16.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron17.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron18.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron19.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron110.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron111.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {Clapeyron112.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {Clapeyron113.txt};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

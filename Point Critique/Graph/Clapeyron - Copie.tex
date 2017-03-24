@@ -1,0 +1,116 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pdflscape}
+\usepackage{bigcenter}
+\usetikzlibrary{plotmarks, positioning}
+\title{}
+\author{Sylvain}
+\pgfplotscreateplotcyclelist{mycolorlist}{%
+blue,every mark/.append style={fill=blue!80!black},mark=*\\%
+red,every mark/.append style={fill=red!80!black},mark=square*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+brown!60!black,every mark/.append style={fill=brown!80!black},mark=otimes*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+black,mark=star,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+blue,every mark/.append style={fill=blue!80!black},mark=diamond*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+brown!60!black,densely dashed,every mark/.append style={
+solid,fill=brown!80!black},mark=square*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+black,densely dashed,every mark/.append style={solid,fill=gray},mark=otimes*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+blue,densely dashed,mark=star,every mark/.append style=solid,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*,error bars/.cd,y dir=both, y explicit,x dir=both, x explicit,error mark=none\\%
+}
+
+
+
+\begin{document}
+\maketitle
+%\[ PV=P\cdot V\cdot 0.1 \]
+%\[ InvV=\frac{1}{V}\cdot 1000000 \]
+%\[ Ppascal=P \]
+\begin{landscape}
+\thispagestyle{empty}
+%\parindent=0pt
+%\eject\null
+%\vfill
+\hspace*{-4cm}
+\vspace*{-2cm}
+\centering
+%\begin{bigcenter}
+\begin{tikzpicture}
+\begin{axis}[
+height=16cm,width=20cm
+,axis x line=bottom,axis y line=left
+,xmin=0.048,xmax=2.06340740740741
+,ymin=15.8368749635271,ymax=46.097571883008
+,grid=major
+,title={Diagramme de Clapeyron P(V) }
+,xlabel={V(mL)}
+,ylabel={P(bar)}
+,legend entries={,T=294.8K,T=298.7K,T=304K,T=308.8K,T=313.8K,T=318K,T=323K}
+,cycle list name=mycolorlist
+]
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron10.txt};
+\addplot[draw=gray, smooth] file
+ {Sat.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron10.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron12.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron11.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron14.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron12.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron16.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron13.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron18.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron14.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron110.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron15.txt};
+%\addplot[draw=red
+%,only marks
+%,mark=x
+%] file
+% {Clapeyron112.txt};
+\addplot table[x error index=2,y error index=3]
+ {Clapeyron16.txt};
+\end{axis}
+
+\end{tikzpicture}
+
+
+\end{landscape}
+\end{document}

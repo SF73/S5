@@ -1,0 +1,212 @@
+%!TEX encoding = UTF-8 Unicode
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{plotmarks}
+\title{}
+\author{Sylvain}
+\begin{document}
+\maketitle
+constante des gaz parfaits\newline
+\[ R=8.314 \]
+\[ PV=P\cdot V\cdot 0.1 \]
+\[ InvV=\frac{1}{V}\cdot 1000000 \]
+\[ Ppascal=P \]
+\[ B0=\frac{A}{C} \]
+Utilisation d'un paramètre de modélisation (donc susceptible de disparaître)\newline
+\[ n=\frac{C}{R\cdot T} \]
+Utilisation d'un paramètre de modélisation (donc susceptible de disparaître)\newline
+\paragraph{Modélisation}
+\[ PV=A\cdot InvV+B \]
+\paragraph{N\degres1 }
+\paragraph{N\degres2 }
+Ecart-type sur PV=25,45 mJ\newline
+Résultat d'un réglage manuel\newline
+des paramètres. Pour optimiser,\newline
+cliquer sur ajuster\newline
+\paragraph{N\degres3 }
+Ecart-type sur PV=26,93 mJ\newline
+Résultat d'un réglage manuel\newline
+des paramètres. Pour optimiser,\newline
+cliquer sur ajuster\newline
+\paragraph{N\degres4 }
+Ecart-type sur PV=40,49 mJ\newline
+Résultat d'un réglage manuel\newline
+des paramètres. Pour optimiser,\newline
+cliquer sur ajuster\newline
+\paragraph{N\degres5 }
+Ecart-type sur PV=38,05 mJ\newline
+Résultat d'un réglage manuel\newline
+des paramètres. Pour optimiser,\newline
+cliquer sur ajuster\newline
+\paragraph{N\degres6 }
+Ecart-type sur PV=59,62 mJ\newline
+Résultat d'un réglage manuel\newline
+des paramètres. Pour optimiser,\newline
+cliquer sur ajuster\newline
+\paragraph{N\degres7 }
+Ecart-type sur PV=23,07 mJ\newline
+Intervalle de confiance à 95\%\newline
+A=(-2 $\pm$0)10${^-6}$ m${^5}$.kg.s${^-2}$\newline
+B=(4,86 $\pm$0,08)J\newline
+\paragraph{N\degres8 }
+
+\begin{tikzpicture}
+\begin{axis}[
+height=8cm,width=12cm
+,axis x line=bottom,axis y line=left
+,xmin=0.06,xmax=5.19
+,ymin=0.082638592,ymax=4.462206208
+,title={N\degres1 }
+,xlabel={InvV(cm${^-3}$)}
+,ylabel={PV(J)}
+]
+\addplot[draw=red
+,mark=x
+] file
+ {viriel10.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel11.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel12.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel13.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel14.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel15.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel16.txt};
+\addplot[draw=red
+,mark=x
+] file
+ {viriel17.txt};
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+\begin{axis}[
+height=8cm,width=12cm
+,axis x line=bottom,axis y line=left
+,xmin=0,xmax=5.2
+,ymin=0,ymax=4.472
+,grid=major
+,title={N\degres1 }
+,xlabel={InvV(cm${^-3}$)}
+,ylabel={PV(J)}
+]
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel20.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel22.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel23.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel24.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel26.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel27.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel28.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel210.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel211.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel212.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel214.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel215.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel216.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel218.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel219.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel220.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel222.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel223.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel224.txt};
+\addplot[draw=red
+,mark=none,smooth
+] file
+ {viriel226.txt};
+\addplot[draw=red
+,only marks
+,mark=x
+] file
+ {viriel227.txt};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
